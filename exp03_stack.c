@@ -2,11 +2,11 @@
 #define MAX_SIZE 5
 
 int stack[MAX_SIZE];
-int top = 0;
+int top = -1;
 
 int isFull() { return top == MAX_SIZE - 1; }
 
-int isEmpty() { return top == 0; }
+int isEmpty() { return top == -1; }
 
 void push(int value) {
   if (isFull()) {
@@ -25,7 +25,7 @@ void display() {
     printf("Stack is empty\n");
     return;
   }
-  for (int i = top; i >= 1; i--)
+  for (int i = top; i >= 0; i--)
     printf("%d\n", stack[i]);
 }
 
